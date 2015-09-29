@@ -12,14 +12,13 @@
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            @if (Auth::check())
             <ul class="nav navbar-nav">
                 <li class="{{ (Request::is('/') ? 'active' : '') }}">
-                    <a href="{{ URL::to('') }}"><i class="fa fa-home"></i> Home</a>
-                </li>
-                <li class="{{ (Request::is('about') ? 'active' : '') }}">
-                    <a href="{{ URL::to('about') }}">About</a>
+                    <a href="{{ URL::to('/home') }}"> <span class="glyphicon glyphicon-home"></span> Home</a>
                 </li>
             </ul>
+            @endif
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::check())
                 <li class="dropdown right">
