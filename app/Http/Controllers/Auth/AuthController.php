@@ -98,7 +98,10 @@ use AuthenticatesAndRegistersUsers,
 
         $userData = array(
             'email' => $data['email'],
-            'password' => $data['password']
+            'password' => $data['password'],
+            'is_deleted' => 0,
+            'is_blocked' => 0,
+            'type' => $data['type']
         );
 
         if (Auth::validate($userData)) {
@@ -135,7 +138,10 @@ use AuthenticatesAndRegistersUsers,
         $userData = array(
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password']
+            'password' => $data['password'],
+            'is_deleted' => 0,
+            'is_blocked' => 0,
+            'type' => 'USER'
         );
 
         $this->create($userData);

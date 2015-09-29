@@ -25,6 +25,13 @@
                    name="password" id="password">
             <span class="help-block">{{$errors->first('password',':message')}}</span>
         </div>
+        <div class="form-group">
+            <label for="type"> {{trans('site/user.user_type') }} </label>
+            <select name="type" class="form-control">
+                <option value="ADMIN">Admin</option>
+                <option value="USER">User</option>
+            </select>
+        </div>
         <div class="form-actions form-group">
             <button type="submit" class="btn btn-primary">{{{trans('site/user.submit') }}}</button>
             <a class="btn btn-default" href="{{URL::to('auth/register')}}">{{trans('site/user.register') }}</a>

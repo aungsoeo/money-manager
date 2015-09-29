@@ -1,7 +1,7 @@
 <?php
 
 return [
-        'site_title' => 'Money manager',
+        'site_title' => 'Money Manager',
 	'home' => 'Home',
 	'login' => 'Login',
 	'sign_up' => 'Sign up',

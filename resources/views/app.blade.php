@@ -46,7 +46,7 @@
 
 <body>    
 <div id="wrap">
-    @include('partials.nav')
+        @include('partials.nav')
     <div class="container">
         @include('notifications')
         @yield('content')
