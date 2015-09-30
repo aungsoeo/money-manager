@@ -21,6 +21,10 @@ class CreateCategories extends Migration
                 'DEFAULT',
                 'CUSTOM'
             ));
+            $table->enum('usage_type', array(
+                'EXPENSE',
+                'INCOME'
+            ));
             $table->rememberToken();
             $table->timestamps();
             $table->index('parent_id');
