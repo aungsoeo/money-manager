@@ -42,4 +42,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     //Category
     Route::get('category', 'Admin\CategoriesController@index');
     Route::get('add/category', 'Admin\CategoriesController@add');
+    Route::post('add/category', 'Admin\CategoriesController@addPost');
 });

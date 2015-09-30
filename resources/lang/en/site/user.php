@@ -19,5 +19,6 @@ return [
     'password_required' => 'You need to provide your password',
     'password_confirmed' => 'You need to provide confirm password',
     'change_password' => 'Change password',
-    'dashboard' => 'Dashboard'
+    'dashboard' => 'Dashboard',
+    'user_type' => 'User Type'
 ];

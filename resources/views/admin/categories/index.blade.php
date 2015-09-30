@@ -8,7 +8,7 @@
             <h4>Category</h4>
         </div>
         <div class="col-lg-1">
-            <a href="{{ URL::to('/admin/add/category') }}" class="btn btn-success"> Add</a>
+            <a href="{{ URL::to('/admin/add/category') }}" class="btn btn-success"> <span class="glyphicon glyphicon-plus-sign"></span> Add</a>
         </div>
     </div>
 </div>
