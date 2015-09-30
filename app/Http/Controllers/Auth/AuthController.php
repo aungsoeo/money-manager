@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Redirect;
 use Session;
+use DB;
 
 class AuthController extends Controller
 {
@@ -110,7 +111,15 @@ use AuthenticatesAndRegistersUsers,
                 return Redirect::intended("/home");
             }
         } else {
+            $users = DB::table('users')
+                ->where('email', $userData['email'])
+                ->where('type', $userData['type'])
+                ->get();
+        if (!empty($users) && ($users[0]->is_blocked == 1)) {
+            Session::flash('error', 'Your account has been blocked. Please contact: savan.koradia@gmail.com');
+        } else {
             Session::flash('error', 'Wrong username or password.');
+        }
             return redirect('/auth/login');
         }
     }
