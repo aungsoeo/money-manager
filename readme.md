@@ -1,3 +1,7 @@
+## Money manager application
+
+Money manager application is built on Laravel 5 framework. This application is useful for all type of users to manage their personal and sharing finance details.
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
@@ -20,7 +24,7 @@ Thank you for considering contributing to the Laravel framework! The contributio
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Project, please send an e-mail to Savan Koradia at koradia.savan@gmail.com. All security vulnerabilities will be promptly addressed.
 
 ### License
 
