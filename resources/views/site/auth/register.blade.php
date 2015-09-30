@@ -1,6 +1,7 @@
 @extends('site.layouts.default') {{-- Web site Title --}}
 @section('title') {{{ trans('site/user.register') }}} :: @parent
 @stop {{-- Content --}} @section('content')
+@include('notifications')
 <div class="page-header">
 	<h1>{{{ trans('site/user.register') }}}</h1>
 </div>

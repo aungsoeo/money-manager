@@ -2,10 +2,16 @@
 @section('title') {{{ trans('site/user.login') }}} :: @parent @stop
 
 {{-- Content --}} @section('content')
-<div class="page-header">
-    <h1>{{{ trans('site/user.login_to_account') }}}</h1>
-</div>
-<form method="POST"
+<div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+        <div class="panel panel-default">
+    <div class="panel-heading">
+        {{{ trans('site/user.login_to_account') }}}
+    </div>
+    <div class="panel-body">
+        <!--@include('notifications')-->
+      <form method="POST"
       action="{{URL::to('auth/login')}}" accept-charset="UTF-8">
     <!-- CSRF Token -->
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -38,6 +44,11 @@
         </div>
     </fieldset>
 </form>
-
+  
+    </div>
+</div>
+    </div>
+    <div class="col-lg-3"></div>
+</div>
 @stop
 

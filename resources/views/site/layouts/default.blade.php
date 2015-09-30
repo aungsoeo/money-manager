@@ -54,7 +54,7 @@
     @include('partials.nav')
     @yield('carousel')
     <div class="container">
-        @include('notifications')
+        <!--@include('notifications')-->
         @yield('content')
         @yield('galeries')
     </div>
