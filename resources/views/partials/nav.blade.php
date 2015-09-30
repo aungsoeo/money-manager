@@ -25,6 +25,9 @@
                 <li class="{{ (Request::is('admin/users') ? 'active' : '') }}">
                     <a href="{{ URL::to('/admin/users') }}"> <span class="glyphicon glyphicon-user"></span> {{{ trans('admin/user.users') }}}</a>
                 </li>
+                <li class="{{ (Request::is('admin/category') ? 'active' : '') }}">
+                    <a href="{{ URL::to('/admin/category') }}"> <span class="glyphicon glyphicon-list-alt"></span> Category</a>
+                </li>
                 @endif
             </ul>
             @endif

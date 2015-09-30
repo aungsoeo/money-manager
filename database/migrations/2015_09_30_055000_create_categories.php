@@ -25,11 +25,12 @@ class CreateCategories extends Migration
                 'EXPENSE',
                 'INCOME'
             ));
-            $table->rememberToken();
+            $table->boolean('is_deleted');
             $table->timestamps();
             $table->index('parent_id');
             $table->index('user_id');
             $table->index('type');
+            $table->index('is_deleted');
         });
     }
 

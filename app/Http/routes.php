@@ -38,4 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     
     //users
     Route::get('users', 'Admin\UsersController@index');
+    
+    //Category
+    Route::get('category', 'Admin\CategoriesController@index');
+    Route::get('add/category', 'Admin\CategoriesController@add');
 });
