@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-actions form-group">
                             <button type="submit" class="btn btn-primary">{{{trans('admin/user.submit') }}}</button>
-                            <a class="btn btn-default" href="{{URL::to('auth/register')}}">{{trans('admin/user.cancel') }}</a>
+                            <a class="btn btn-default" href="{{URL::to('/admin/category')}}">{{trans('admin/user.cancel') }}</a>
                         </div>
                     </fieldset>
                 </form>
