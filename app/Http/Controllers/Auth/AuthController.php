@@ -116,7 +116,7 @@ use AuthenticatesAndRegistersUsers,
                 ->where('type', $userData['type'])
                 ->get();
         if (!empty($users) && ($users[0]->is_blocked == 1)) {
-            Session::flash('error', 'Your account has been blocked. Please contact: savan.koradia@gmail.com');
+            Session::flash('error', 'Your account has been blocked. Please contact: koradia.savan@gmail.com');
         } else {
             Session::flash('error', 'Wrong username or password.');
         }

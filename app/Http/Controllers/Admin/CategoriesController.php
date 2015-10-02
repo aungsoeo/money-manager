@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Request;
 use DB;
+use Session;
 use Validator;
 
 class CategoriesController extends Controller
@@ -29,7 +30,6 @@ class CategoriesController extends Controller
     {
         $this->isUserAdmin();
 
-        // var_dump($categories);
         return view('admin.categories.add', array(
             'categories' => json_encode($this->_getParentCategory())
         ));
@@ -40,6 +40,7 @@ class CategoriesController extends Controller
         $data = Request::input();
         $rules = array(
             'category_name' => 'required',
+            'type' => 'required'
         );
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -47,6 +48,7 @@ class CategoriesController extends Controller
         }
 
         $categories = $this->_getParentCategory();
+        $usageType = ($data['type'] == "INCOME") ? "INCOME" : "EXPENSE";
         $parentCategoryRequestId = (!empty($data['parent_type_id']) && $this->_isValidParentId($data['parent_type_id'])) ? $data['parent_type_id'] : 0;
         
         $categoriesModel = new \App\Model\Categories();
@@ -54,14 +56,12 @@ class CategoriesController extends Controller
         $categoriesModel->parent_id = $parentCategoryRequestId;
         $categoriesModel->user_id = 0;
         $categoriesModel->type = "DEFAULT";
-        $categoriesModel->usage_type = "EXPENSE";
+        $categoriesModel->usage_type = $usageType;
         $categoriesModel->is_deleted = 0;
         $categoriesModel->save();
-        
-        
-        return view('admin.categories.add', array(
-            'categories' => $categories
-        ));
+     
+        Session::flash('success', 'New Category Added.');
+        return redirect('/admin/category');
     }
 
     private function _isValidParentId($parent_id)
@@ -94,7 +94,6 @@ class CategoriesController extends Controller
                 $categories[$category->usage_type][$category->id] = $category->name;
             }
         }
-        var_dump($categories);
         return $categories;
     }
 

@@ -62,7 +62,7 @@
                         $("div.parent_type_id").hide();
                     } else {
                         $("div.parent_type_id").show();
-                        var str = "";
+                        var str = "<option value='0'>Select Parent</option>";
                         $.each(categories.EXPENSE, function(key, value){
                             str += "<option value='"+key+"'>"+value+"</option>";
                         });
@@ -74,7 +74,7 @@
                         $("div.parent_type_id").hide();
                     } else {
                         $("div.parent_type_id").show();
-                        var str = "";
+                        var str = "<option value='0'>Select Parent</option>";
                         $.each(categories.INCOME, function(key, value){
                             str += "<option value='"+key+"'>"+value+"</option>";
                         });

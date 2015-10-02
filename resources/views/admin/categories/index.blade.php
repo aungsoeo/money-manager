@@ -3,6 +3,7 @@
 
 {{-- Content --}} @section('content')
 <div class="page-header">
+    @include('notifications')
     <div class="row">
         <div class="col-lg-11">
             <h4>Category</h4>
